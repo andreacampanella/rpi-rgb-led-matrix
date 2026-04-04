@@ -199,7 +199,7 @@ app.add_handler(CommandHandler("clear", clear_command))
 app.add_handler(CommandHandler("help", help_command))
 app.add_handler(
     MessageHandler(
-        filters.PHOTO | filters.ANIMATION | filters.Document.IMAGE | filters.Video,
+        filters.PHOTO | filters.ANIMATION | filters.Document.IMAGE | filters.VIDEO,
         handle_media,
     )
 )

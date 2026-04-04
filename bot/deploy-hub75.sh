@@ -26,7 +26,7 @@ sudo apt-get update -qq
 sudo apt-get install -y -qq \
   git build-essential \
   libgraphicsmagick++-dev libwebp-dev \
-  libavcodec-dev libavformat-dev libswscale-dev libavutil-dev \
+  libavcodec-dev libavformat-dev libswscale-dev libavutil-dev libavdevice-dev \
   python3 python3-pip \
   2>/dev/null
 
@@ -64,6 +64,11 @@ make -C "$INSTALL_DIR/flaschen-taschen/server" clean 2>/dev/null || true
 make -C "$INSTALL_DIR/flaschen-taschen/server" FT_BACKEND=rgb-matrix -j"$(nproc)"
 
 info "Building ft client tools..."
+
+# Fix upstream Makefile: default target only builds send-text
+sed -i 's/^all : send-text$/all : send-text send-image send-video/' \
+  "$INSTALL_DIR/flaschen-taschen/client/Makefile"
+
 make -C "$INSTALL_DIR/flaschen-taschen/client" -j"$(nproc)"
 
 # --- Install binaries ---
