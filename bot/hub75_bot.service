@@ -1,0 +1,16 @@
+[Unit]
+Description=HUB75 Telegram Bot
+After=network-online.target ft-server.service
+Wants=network-online.target
+Requires=ft-server.service
+
+[Service]
+Type=simple
+User=__USER__
+ExecStart=/usr/bin/python3 __BOT_SCRIPT__
+Restart=on-failure
+RestartSec=10
+Environment=PATH=__BIN_DIR__:/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=multi-user.target

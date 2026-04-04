@@ -1,0 +1,22 @@
+# hub75_bot configuration
+# Copy to ~/.hub75_bot.conf and edit before running.
+# chmod 600 ~/.hub75_bot.conf
+
+# Telegram bot token (get from @BotFather)
+BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN_HERE
+
+# Directory to store received images/GIFs/videos
+GIF_DIR=~/gifs
+
+# LED matrix display dimensions (pixels)
+DISPLAY_WIDTH=64
+DISPLAY_HEIGHT=64
+
+# Seconds each image is shown before cycling to the next
+DISPLAY_TIME=6
+
+# ft-server host (use 127.0.0.1 if running on the same Pi)
+FT_HOST=127.0.0.1
+
+# Show each image twice before moving to the next (true/false)
+REPEAT_EACH_IMAGE=false
