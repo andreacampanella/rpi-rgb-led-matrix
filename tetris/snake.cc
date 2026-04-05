@@ -411,7 +411,6 @@ static void render(RGBMatrix *matrix, FrameCanvas *&canvas,
         int sw = string_width(sc);
         int sx = W - sw - 3;
         int sy = 2;
-        fill_rect(canvas, sx - 1, sy - 1, sx + sw, sy + 6, SCORE_BG);
         draw_string(canvas, sx, sy, sc, TEXT_SCORE);
     }
 
